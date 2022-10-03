@@ -7,8 +7,8 @@ const Coin = ({name, symbol, price, image, marketCap, priceChange}) => {
             <span>{name}</span>
             <span>{symbol.toUpperCase()}</span>
             <span>{price.toLocaleString()}</span>
-            <span>{priceChange.toLocaleString()}</span>
-            <span>{marketCap}</span>
+            <span>{priceChange}</span>
+            <span>{marketCap.toLocaleString()}</span>
         </div>
     );
 };
