@@ -8,6 +8,9 @@ import Coin from './Coin';
 //COMPONENTS
 import Loader from './Loader';
 
+//CSS
+import styles from './Landing.module.css';
+
 const Landing = () => {
 
     const [coins, setCoins] = useState([]);
@@ -30,11 +33,11 @@ const Landing = () => {
 
     return (
         <>
-            <input type= 'text' placeholder='Search' value={search} onChange = {searchHandler}/>
+            <input className= {styles.input} type= 'text' placeholder='Search' value={search} onChange = {searchHandler}/>
             {
                 coins.length ?
 
-                    <div>
+                    <div className = {styles.coinContainer}>
                         {searchedCoins.map(coin => <Coin 
                         key={coin.id} 
                         symbol = {coin.symbol}
@@ -43,8 +46,6 @@ const Landing = () => {
                         price = {coin.current_price}
                         marketCap = {coin.market_cap}
                         priceChange = {coin.price_change_24h}
-
-
                         />
                         )}
                     </div> 
